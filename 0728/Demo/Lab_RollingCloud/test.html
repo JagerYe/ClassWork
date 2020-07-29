@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #banner {
+            position: relative;
+            width: 800px;
+            height: 168px;
+            margin: 0px auto;
+            /*上為0，左右自動一樣*/
+            overflow: hidden;
+            /*超出部分顯示方式*/
+            outline: 1px solid gray;
+        }
+
+        #bannerText {
+            position: absolute;
+            right: 15px;
+            top: 8px;
+            font-family: Arial;
+            font-style: italic;
+            font-size: 20px;
+            color: DarkBlue;
+        }
+
+        #bannerImage {
+            position: relative;
+            width: 1200px;
+            height: 168px;
+            background-image: url('cloud.jpg');
+            background-repeat: repeat-x;
+            animation: rollImage linear 5s 1;
+        }
+
+        @keyframes rollImage {
+            0% {
+                right: 0px;
+            }
+
+            100% {
+                right: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <div id="bannerImage"></div>
+        <div id="bannerText">Rolling Clouds</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+body {
+    color: purple;/*字體顏色*/
+    background-color: #FFF;/*背景顏色*/
+    background-image:url("images/gradientBlue.png");/**背景圖片*/
+    background-repeat:repeat-x;/*背景重複方向*/
+    font-family: Georgia, "Times New Roman", Times, serif;/*字體優先順序*/
+    padding-left: 11em;/*內距從左的距離*/
+}
+
+ul.navbar {
+    position: absolute;/*浮起*/
+    /* 設定位子 */
+    top: 2em;
+    left: 1em;
+    width: 9em;/*設定寬度*/
+    list-style-type: none;/*清單標示型態*/
+    padding: 0;
+    margin: 0;
+}
+
+ul.navbar li {
+    background-color: white;
+    margin: 0.5em 0;
+    padding: 0.3em;
+    border-right: 5px solid black;
+}
+
+ul.navbar a{
+    text-decoration: blue;
+}
+
+a:link {/*a未連接時*/
+    color: blue;
+}
+
+a:visited {/*a連接後*/
+    color: purple;
+}
+
+a:hover{
+    position:relative;
+    bottom:1px;
+    left:1px;
+}
+
+h1 {
+    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;/*字體優先順序*/
+}
+
+address {
+    bottom: 10%;
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: thin dotted;
+}

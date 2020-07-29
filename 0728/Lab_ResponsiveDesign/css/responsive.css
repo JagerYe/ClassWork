@@ -1,0 +1,26 @@
+@media screen and (max-width: 900px) {
+
+    body {
+        color: red;
+    }
+
+    div.one-third {
+        width: 47.5%;
+    }
+
+    div.one-third-second{
+        margin: 0;
+    }
+
+    div.one-third-last {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    div.one-third {
+        width: auto;
+    }
+}
