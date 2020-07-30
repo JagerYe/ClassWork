@@ -7,12 +7,12 @@ var cors = require("cors");
 app.use(cors());
 
 // Web 伺服器的靜態檔案置於 public 資料夾
-app.use( express.static( "public" ) );
+app.use(express.static("public"));
 
 // 以 body-parser 模組協助 Express 解析表單與JSON資料
 var bodyParser = require('body-parser');
-app.use( bodyParser.json() );
-app.use( bodyParser.urlencoded({extended: false}) );
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // 一切就緒，開始接受用戶端連線
 // app.listen(process.env.PORT);
@@ -22,13 +22,10 @@ console.log("鍵盤「Ctrl + C」可結束伺服器程式.");
 
 // ---------------
 
-app.get("/hello/:text", function (request, response) {
+app.get("/test/:text", function (request, response) {
 	// 模擬程式三秒鐘延遲
 	var stop = new Date().getTime();
-    while(new Date().getTime() < stop + 3000) {
-        ;
-    }	
-	
+	while (new Date().getTime() < stop + 3000) { }
 	response.send("Hello! " + request.params.text);
 });
 
