@@ -1,0 +1,40 @@
+USE db08;
+
+DROP TABLE orders;
+DROP TABLE customers;
+
+CREATE TABLE customers(
+    customerID int PRIMARY KEY,
+    companyName varchar(20));
+    
+CREATE TABLE orders(
+    orderID int PRIMARY KEY,
+    customerID int);
+    
+ALTER TABLE orders
+	ADD CONSTRAINT fk_customers_orders
+    FOREIGN KEY (customerID) REFERENCES customers (customerID)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE;
+    
+INSERT INTO customers(customerID, companyName) VALUES(1, 'a');
+INSERT INTO customers(customerID, companyName) VALUES(2, 'b');
+INSERT INTO customers(customerID, companyName) VALUES(3, 'c');
+
+INSERT INTO orders(orderID, customerID) VALUES(1, 2);
+INSERT INTO orders(orderID, customerID) VALUES(2, 1);
+INSERT INTO orders(orderID, customerID) VALUES(3, 1);
+
+-- UPDATE customers SET customerID = 10 WHERE customerID = 1;
+-- DELETE FROM customers WHERE customerID = 1;
+
+ALTER TABLE customers ADD CONSTRAINT uc UNIQUE (companyName);
+-- INSERT INTO customers(customerID, companyName) VALUES(4, 'c');
+ALTER TABLE customers DROP INDEX uc;
+
+CREATE UNIQUE INDEX idx_company ON customers (companyName);
+-- INSERT INTO customers(customerID, companyName) VALUES(4, 'c');
+DROP INDEX idx_company ON customers;
+
+SELECT * FROM customers;
+SELECT * FROM orders ORDER BY orderID;

@@ -5,7 +5,7 @@ show tables;
 
 
 -- 檢視現在的使用者清單
-select user, host, password from user;
+select user, host, authentication_string from user;
 select host, db, user, select_priv, insert_priv, update_priv from db;
 select host, db, user, table_name, table_priv from tables_priv;
 
@@ -15,7 +15,7 @@ grant usage on *.* to carl@'%' identified by 'Pa$$w0rd';
 
 
 -- 各個記錄安全權限的資料表有何變化?
-select user, host, password from user;
+select user, host, authentication_string from user;
 select host, db, user, select_priv, insert_priv, update_priv from db;
 select host, db, user, table_name, table_priv from tables_priv;
 
@@ -24,7 +24,7 @@ create user jeter identified by 'Pa$$w0rd';
 
 
 -- 各個記錄安全權限的資料表有何變化?
-select user, host, password from user;
+select user, host, authentication_string from user;
 select host, db, user, select_priv, insert_priv, update_priv from db;
 select host, db, user, table_name, table_priv from tables_priv;
 
@@ -39,7 +39,7 @@ grant usage on *.* to Carl@'%' identified by 'Pa$$w0rd';
 
 
 -- 幫 carl 重設密碼:
-set password for carl = password('Pa$$w0rd');
+set authentication_string for carl = authentication_string('Pa$$w0rd');
 
 
 -- 以 carl 的身份嘗試下列指令, 順利嗎? :(
@@ -75,7 +75,7 @@ update customers set companyName = 'Lab Company' where customerID = 'ALFKI';
 
 -- 收回 carl 對於 customers 資料表的 update 權限
 revoke update on northwind.customers from carl;
-select user, host, password from mysql.user;
+select user, host, authentication_string from mysql.user;
 select host, db, user, select_priv, insert_priv, update_priv from db;
 select host, db, user, table_name, table_priv from tables_priv;
 
@@ -85,5 +85,5 @@ select host, db, user, table_name, table_priv from tables_priv;
 grant update on northwind.customers to cathy@winxp identified by 'Pa$$w0rd';
 select host, db, user, select_priv, insert_priv, update_priv from db;
 select host, db, user, table_name, table_priv from tables_priv;
-select user, host, password from user;
+select user, host, authentication_string from user;
 

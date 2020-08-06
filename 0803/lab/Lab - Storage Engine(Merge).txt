@@ -21,7 +21,7 @@ create table Lab
   id int auto_increment unique,
   data varchar(5) not null
 ) engine = Merge union = (t1, t2) insert_method = first;
--- insert_method �ﶵ: no | first | last
+-- insert_method 選項: no | first | last
 
 insert into t1 (data) values ('t1');
 insert into t2 (data) values ('t2');
