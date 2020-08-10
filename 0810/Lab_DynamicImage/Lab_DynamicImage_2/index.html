@@ -30,8 +30,9 @@ function setImage()
 	var iImage = Math.floor(Math.random() * img.length);
 	document.getElementById("imgs").src = img[iImage];
 	document.getElementById("imgshref").href = url[iImage];
-
+	setTimeout(setImage,1000);
 }
+
 
 </script>
 

@@ -43,7 +43,7 @@ $(document).ready(function () {
     $("#okButton").on('click', function () {
         // ----- A 段落 -----
         var x1 = 100;
-        var x1 = 200;
+        var x1 = 200; //var無重複宣告問題
         report.innerHTML = `
             x1 = ${x1}<br>
             y1 = ${y1}<br>
@@ -52,12 +52,12 @@ $(document).ready(function () {
 
         // ----- B 段落 -----
         let x2 = 100;
-        let x2 = 200;  // <----- 
+        // let x2 = 200;  // <----- let有獨一性，固x2重複宣告
         report.innerHTML += `
             x2 = ${x2}<br>
             y2 = ${y2}<br>
         `;
-        let y2 = 200; // <-----
+        let y2 = 200; // <----- 使用此變數的時間點早了
 
         report.innerHTML += "-- End -- ";
     })

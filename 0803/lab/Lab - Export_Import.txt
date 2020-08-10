@@ -41,7 +41,7 @@ create table categories
 load data infile '~/Downloads/test_bak_export.sql '
   replace
   into table categories
-  LINES TERMINATED BY '\r\n';
+  LINES TERMINATED BY '\n';
   -- ignore 2 lines;
 
 select * from categories;
@@ -61,7 +61,7 @@ create table categories
 load data infile '~/Downloads/test_bak_export.sql '
   ignore
   into table categories
-  LINES TERMINATED BY '\r\n';
+  LINES TERMINATED BY '\n';
 
 select * from categories;
 

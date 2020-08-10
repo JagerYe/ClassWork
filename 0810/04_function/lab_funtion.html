@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function showStar(count) {
+            alert(typeof (count));
+            if (count <= 0 || count > 21 || count == 4 || count == 13 || typeof(count) != 'number') {
+                alert("輸入錯誤");
+                return;
+            }
+
+            let star = "";
+            for (let i = 0; i < count; i++) {
+                star += "*";
+            }
+            alert(star);
+        }
+        showStar(-7);
+    </script>
+</body>
+
+</html>

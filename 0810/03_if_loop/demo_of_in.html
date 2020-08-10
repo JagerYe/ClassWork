@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+
 </head>
+
 <body>
     <div id="debug"></div>
     <script>
-        var dataList = [10, 20, 30];
+        var dataList = [10, 20, 30,'77777'];
         dataList[4] = 40;
-        
+
+        let total = 0;
+        for(let i =0;i<dataList.length;i++){
+            alert(parseFloat(dataList[i]));
+            
+            total += dataList[i];
+            debug.innerHTML += total + `<br>`;
+        }
+
+        // for (let i in dataList) {
+        //     alert(isNaN(dataList[i]));
+            
+        //     total += dataList[i];
+        //     debug.innerHTML += total + `<br>`;
+        // }
+
         // var total = 0;
         // for (let i = 0; i < dataList.length; i++) {
         //     if (typeof dataList[i] === "undefined") {
@@ -18,7 +35,7 @@
         //     debug.innerHTML += dataList[i] + "<br>";
         // }
         // debug.innerHTML += total;
-        
+
         // -------------------------------------------
         // var total = 0;
         // for (let i in dataList) {
@@ -27,18 +44,19 @@
         //     debug.innerHTML += dataList[i] + "<br>";
         // }
         // debug.innerHTML += total;
-        
-        var total = 0;
-        for (let data of dataList) {
-            if (typeof data === "undefined") {
-                continue;
-            }
-            total += data;
-            debug.innerHTML += data + "<br>";
-        }
-        debug.innerHTML += total;
-        
-        
+
+        // var total = 0;
+        // for (let data of dataList) {
+        //     if (typeof data === "undefined") {
+        //         continue;
+        //     }
+        //     total += data;
+        //     debug.innerHTML += data + "<br>";
+        // }
+        // debug.innerHTML += total;
+
+
     </script>
 </body>
+
 </html>

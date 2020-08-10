@@ -43,13 +43,14 @@
 var x = 100;
 
 $(document).ready(function () {
-    var y = 200; // TODO: y no var
+    var y = 200; // TODO: y no var 如不宣告成var會變成window物件
 
     $("#okButton").on('click', function () {
-        var x = 300;  // TODO: x no var
+        var x = 300;  // TODO: x no var 如不使用var會修改到window的x
 
         report.innerHTML = `
             x = ${x}<br>
+            y = ${y}<br>
             window.x = ${window.x}<br>
             window.y = ${window.y}<br>
         `;

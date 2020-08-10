@@ -1,43 +1,78 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Dynamic Image Lab</title>
+	<meta charset="UTF-8">
+	<title>Dynamic Image Lab</title>
 </head>
+
 <body>
 
-<p>...</p>
+	<p>...</p>
+	<div id="show">
 
-<a id="imgshref" href="http://oakland.athletics.mlb.com/" target="_blank">
-  <img src="images/oak.gif" id="imgs" border="0" />
-</a>
+	</div>
 
-<p>...</p>
+	<p>...</p>
 
-<script type="text/javascript">
+	<script type="text/javascript">
+		var img = [];
+		var url = [];
+		var show = [];
+		var count = 0;
+		var showTimer;
+		settimg()
+		setImage();
 
-setImage();
+		function setImage() {
+			count++;
+			if (count > img.length) {
+				clearTimeout(showTimer);
+				showTimer = 0;
+				return;
+			}
 
-function setImage()
-{
-	var img = new Array();
-	var url = new Array();
-	img[0] = "images/chc.gif";	url[0] = "http://chicago.cubs.mlb.com/";
-	img[1] = "images/oak.gif";	url[1] = "http://oakland.athletics.mlb.com/";
-	img[2] = "images/sd.gif";	url[2] = "http://sandiego.padres.mlb.com/";
-	img[3] = "images/was.gif";	url[3] = "http://washington.nationals.mlb.com/";
-	
-	// 為什麼圖片都不會變呢？
-	var iImage = 0;
-	iImage += 1;
+			let iImage = getItem();
 
-	document.getElementById("imgs").src = img[iImage];
-	document.getElementById("imgshref").href = url[iImage];
-	
-	setTimeout(setImage, 1000);
-}
+			document.getElementById("show").innerHTML += '<a href="' + url[iImage] + '" target="_blank">'
+				+ '<img src="' + img[iImage] + '" border="0" />'
+				+ '</a>';
 
-</script>
+			// document.getElementById("imgs").src = img[iImage];
+			// document.getElementById("imgshref").href = url[iImage];
+			showTimer = setTimeout(setImage, 1000);
+		}
+
+		function settimg() {
+			img[0] = "images/chc.gif";
+			url[0] = "http://chicago.cubs.mlb.com/";
+			img[1] = "images/oak.gif";
+			url[1] = "http://oakland.athletics.mlb.com/";
+			img[2] = "images/sd.gif";
+			url[2] = "http://sandiego.padres.mlb.com/";
+			img[3] = "images/was.gif";
+			url[3] = "http://washington.nationals.mlb.com/";
+			for (let i = 0; i < img.length; i++) {
+				show[i] = false;
+			}
+		}
+		function getItem() {
+			let counter = 0;
+			let item;
+
+			do {
+				item = Math.floor(Math.random() * img.length);
+				if (show[item]) {
+					continue;
+				}
+				show[item] = true;
+				return item;
+			} while (show[item])
+
+		}
+
+	</script>
 
 </body>
+
 </html>
