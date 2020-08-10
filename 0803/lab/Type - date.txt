@@ -11,16 +11,30 @@ create table Lab
 
 -- normal:
 insert into Lab (data) values ('2006-02-28');
+select * from Lab;
+
 insert into Lab (data) values ('2006-02-28 16:30:00');
+select * from Lab;
+
 insert into Lab (data) values ('2006-1-31');
+select * from Lab;
+
 insert into Lab (data) values (current_date());
+select * from Lab;
+
 insert into Lab (data) values (current_timestamp());
+select * from Lab;
+
 -- watch out:
 insert into Lab (data) values ('2006-02-29');
+select * from Lab;
+
 insert into Lab (data) values ('2006-00-31');
+select * from Lab;
+
 insert into Lab (data) values ('0000-00-00');
+select * from Lab;
+
 insert into Lab (data) values ('2006-01-32');
-
-
 select * from Lab;
 

@@ -1,12 +1,24 @@
-﻿use northwind;
+﻿前置作業（因MAMP_Free中的MySQL沒建立my.cnf檔：
+  1.MAMP (stop the servers)
+  2.終端機輸入touch /Applications/MAMP/conf/my.cnf && open -t /Applications/MAMP/conf/my.cnf
+  3.在生成的檔案中輸入
+[mysqld_safe]
+[mysqld]
+secure_file_priv="/Users/russian_spy/"
+  4.存檔後啟動MAMP
+  5.參考網頁：
+  https://stackoverflow.com/questions/51986993/how-to-disable-strict-mode-in-mysql-using-mamp-on-a-mac
+  https://stackoverflow.com/questions/34102562/mysql-error-1290-hy000-secure-file-priv-option
+
+use northwind;
 
 -- 匯出產品類別資料
 -- select categoryId, categoryName from categories;
--- select categoryId, categoryName into outfile 'c:\\temp\\lab.txt' from categories;
+-- select categoryId, categoryName into outfile '~/Downloads/test_bak_export.sql ' from categories;
 
 select categoryId, categoryName 
-  into outfile 'c:\\temp\\lab.txt' 
-  lines terminated by '\r\n'
+  into outfile '~/Downloads/test_bak_export.sql ' 
+  lines terminated by '\n'
   from categories;
 
 -- 準備稍後練習匯入時會用到資料庫與資料表
@@ -26,7 +38,7 @@ create table categories
 -- 特別觀察匯入時的各項數據報告, 例如:
 -- Records: 10  Deleted: 2  Skipped: 0  Warnings: 2
 
-load data infile 'c:\\temp\\lab.txt'
+load data infile '~/Downloads/test_bak_export.sql '
   replace
   into table categories
   LINES TERMINATED BY '\r\n';
@@ -46,7 +58,7 @@ create table categories
 );
 
 
-load data infile 'c:\\temp\\lab.txt'
+load data infile '~/Downloads/test_bak_export.sql '
   ignore
   into table categories
   LINES TERMINATED BY '\r\n';

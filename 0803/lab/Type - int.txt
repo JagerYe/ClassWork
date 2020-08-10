@@ -5,12 +5,12 @@ drop table Lab;
 create table Lab
 (
   id int auto_increment primary key,
-  data int not null
+  data int(5) not null
 );
 
-insert into Lab (data) values (1);
-insert into Lab (data) values (1.4);
-insert into Lab (data) values (1.5);
+insert into Lab (data) values (12345);
+insert into Lab (data) values (123456789);
+insert into Lab (data) values (123456789123456789123456789);
 -- ??
 insert into Lab (data) values (1.9);
 
