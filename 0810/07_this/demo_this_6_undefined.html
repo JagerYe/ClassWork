@@ -9,11 +9,11 @@
     <script>
         "use strict";
 
-        function showLocation () {
-            // console.log(this);  // undefined
-            debug.innerText = this.location;
-        } 
-        showLocation();  
+        // function showLocation () {
+        //     // console.log(this);  // undefined
+        //     debug.innerText = this.location;
+        // } 
+        // showLocation();  
 
         // var showLocation = function () {
         //     console.log(this);
@@ -22,11 +22,11 @@
         // showLocation = showLocation.bind(window);
         // showLocation();
 
-        // var showLocation = () => {
-        //     console.log(this);
-        //     debug.innerText = this.location;
-        // } 
-        // showLocation();
+        var showLocation = () => {
+            console.log(this);
+            debug.innerText = this.location;
+        } 
+        showLocation();
 
     </script>
     

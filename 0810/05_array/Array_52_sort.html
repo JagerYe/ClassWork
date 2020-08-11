@@ -25,7 +25,13 @@ test.onclick = function () {
     var data = [3, 0, 1, 8, 7, 2, 5, 4, 9, 6];
     
     // 你的任務程式:
-    data.sort();
+    data.sort((x,y) =>{
+        x=x-2;
+        y=y-2;
+        if(x<=0)x=x+13;
+        if(y<=0)y=y+13;
+        return x-y;
+    });
 
     
     report.innerText = data.toString();

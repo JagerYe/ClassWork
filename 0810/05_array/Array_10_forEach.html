@@ -25,12 +25,22 @@ test.onclick = function () {
     var sum = 0;
 
     // 你的任務程式...
-    
-    
-    
 
+    data.forEach(function(x){
+        sum += x;
+    });
+
+    // sum = 0;
+ 
+    // data.forEach(element => { //element找的會是data依序找出的值
+    //     sum += element;
+    // });
+
+    sum = 0;
+ 
+    data.forEach(element => sum += element);
+   
     report.innerText = sum;
-
 
 }  // end of test.onclick
 

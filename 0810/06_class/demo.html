@@ -12,7 +12,51 @@
 
     <script>
 
+        // class CAnimal {
+        //     makeSound() {
+        //         alert("Animal: ...");
+        //     }
+        // }
+        // let obj = new CAnimal();
+        // obj.makeSound();
 
+        class Animal {
+            constructor(speak) {
+                this.speak = speak;
+            }
+            set speak(Value) {
+                this._speak = Value;
+            }
+            get speak() {
+                return this._speak;
+            }
+            move() {
+                alert("_speak");
+            }
+        }
+
+        class Dog extends Animal {
+            constructor(speakMessege, name) {
+                super(speakMessege);
+                this.name = name;
+            }
+            get name(){
+                return this._name;
+            }
+            set name(name){
+                this._name = name;
+            }
+            move(){
+                alert("ddd"+this.speak);
+            }
+        }
+
+        // let animal = new Animal();
+        // animal.speak = 199;
+        let dog = new Dog(11, "ss11");
+        alert(dog._speak);
+        alert(dog.name);
+        dog.move();
 
     </script>
 
