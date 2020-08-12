@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A_Kit_Boll</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            let canvas = $('#canvas')[0];
+            let context = canvas.getContext('2d');
+
+            let paddleX = 200;
+            let paddleY = 460;
+            let paddleWidth = 100;
+            let paddleHeight = 15;
+            let paddleDeltaX = 0;
+            let paddleDeltaY = 0;
+
+            function drawPaddle() {
+                context.fillRect(paddleX, paddleY, paddleWidth, paddleHeight);
+            }
+
+            drawPaddle();
+
+            let ballX = 300;
+            let ballY = 300;
+            let ballRadius = 10;
+
+            function drawBall() {
+                context.beginPath();
+                context.arc(ballX, ballY, ballRadius, 0, Math.PI * 2, true);
+                context.fill();
+            }
+
+            drawBall;
+        });
+    </script>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>A_Kit_Boll</h1>
+    <canvas id="canvas" width="400" height="500"></canvas>
+</body>
+
+</html>

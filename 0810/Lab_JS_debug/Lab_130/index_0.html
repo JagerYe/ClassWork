@@ -39,15 +39,16 @@
     <script src="../js/bootstrap.min.js"></script>
 
     <script>
-    
-    function displayTime {
-        report.innerHTML = Date();
-        setInterval(displayTime(), 1000);
-    
-    
-    displayTime;
-    
-    
+
+        function displayTime() {
+            report.innerHTML = Date();
+            setTimeout(displayTime, 1);
+        }
+
+
+        displayTime();
+
+
     </script>
 
 </body>
