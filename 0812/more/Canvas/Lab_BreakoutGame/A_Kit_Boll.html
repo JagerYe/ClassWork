@@ -7,16 +7,25 @@
     <title>A_Kit_Boll</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+        class Paddle {
+            constructor() {
+                let paddleX = 200;
+                let paddleY = 460;
+                let paddleWidth = 100;
+                let paddleHeight = 15;
+                let paddleDeltaX = 0;
+                let paddleDeltaY = 0;
+            }
+
+            // function draw(arams) {
+                
+            // }
+        }
         $(function () {
             let canvas = $('#canvas')[0];
             let context = canvas.getContext('2d');
 
-            let paddleX = 200;
-            let paddleY = 460;
-            let paddleWidth = 100;
-            let paddleHeight = 15;
-            let paddleDeltaX = 0;
-            let paddleDeltaY = 0;
+
 
             function drawPaddle() {
                 context.fillRect(paddleX, paddleY, paddleWidth, paddleHeight);
