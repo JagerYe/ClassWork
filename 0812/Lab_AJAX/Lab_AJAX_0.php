@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="jquery.js"></script>
 </head>
 <body>
 
@@ -29,5 +30,12 @@
 		<input type="submit" value="OK" /> 
 	</form>
 
+	<script>
+		$(document).ready(()=>{
+			$("#letter").change(()=>{
+				alert("OK");
+			})
+		})
+	</script>
 </body>
 </html>
