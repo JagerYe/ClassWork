@@ -5,6 +5,6 @@
 	
 	echo "<br />";
 	
-	natsort($testArray);
+	natsort($testArray);//自然排序
 	var_dump($testArray);
 ?>

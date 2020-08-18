@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_SESSION["obj"])) {
 	$obj = new CDog(2, 20);	
-	$_SESSION["obj"] = $obj;
+	$_SESSION["obj"] = $obj;//如session內有東西時就不會重複創造，但程式結束時還是會殺掉程式中的物件，非session內的物件
 }
 else {
 	$obj = $_SESSION["obj"];

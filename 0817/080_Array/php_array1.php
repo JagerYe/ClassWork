@@ -2,9 +2,14 @@
 $bloodType[] = 'A';
 $bloodType[] = 'B';
 $bloodType[] = 'AB';
-$bloodType[] = 'O';
+$bloodType[4] = 'O';
+
+var_dump($bloodType);
 
 for ($i = 0; $i <= 3; $i++) {
-	echo $bloodType[$i] . "<br />";
+	if($bloodType[$i] !== null){
+		echo $bloodType[$i] . "<br />";
+	}
+	
 }
 ?>

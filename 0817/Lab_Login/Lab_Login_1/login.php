@@ -10,7 +10,7 @@ if (isset($_POST["btnOK"]))
 	$sUserName = $_POST["txtUserName"];
 	if (trim($sUserName) != "")
 	{
-		setcookie("userName", $sUserName);
+		setcookie("userName", $sUserName);//設定cookie，存在客戶的瀏覽器中
 		header("Location: index.php");
 		exit();
 	}
