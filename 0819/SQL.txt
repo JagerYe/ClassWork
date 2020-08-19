@@ -1,0 +1,14 @@
+CREATE DATABASE lab0819db DEFAULT CHARACTER SET utf8;
+USE lab0819db;
+CREATE TABLE city(
+    cityId int PRIMARY KEY,
+    cityName varchar(20)
+);
+INSERT INTO city VALUES (2, 'TaiPei'), (4, 'TaiChung'), (6, 'TaiNan');
+CREATE TABLE employee(
+    employeeId int AUTO_INCREMENT PRIMARY KEY,
+    firstName varchar(20),
+    lastName varchar(20),
+    cityId int
+);
+INSERT INTO employee (firstName, lastName, cityId) VALUES ('Jereay', 'Lin', 2), ('Chien-Ming', 'Wang', 6);

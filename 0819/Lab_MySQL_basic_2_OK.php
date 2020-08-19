@@ -5,7 +5,7 @@ header("content-type:text/html; charset=utf-8");
 
 
 // 1. 連接資料庫伺服器
-$link = @mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+$link = @mysqli_connect("localhost", "root", "root", null, 8889) or die(mysqli_connect_error());
 $result = mysqli_query($link, "set names utf8");
 mysqli_select_db($link, "class");
 
@@ -14,8 +14,7 @@ $commandText = "select * from students";
 $result = mysqli_query($link, $commandText);
 
 // 3. 處理查詢結果
-while ($row = mysqli_fetch_assoc($result))
-{
+while ($row = mysqli_fetch_assoc($result)) {
   echo "ID：{$row['cID']}<br>";
   echo "Name：{$row['cName']}<br>";
   echo "<HR>";
@@ -25,4 +24,3 @@ while ($row = mysqli_fetch_assoc($result))
 mysqli_close($link);
 
 echo "<br />-- Done --";
-?>
