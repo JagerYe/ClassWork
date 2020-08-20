@@ -15,14 +15,12 @@ Lab: 以 XPath 找出目標節點
 1.3	滑鼠右鍵點按 <ul> 裏頭的第個 <li>，
     從快捷功能表選擇「Copy」|「Copy XPath」。
 
-
+//*[@id="Content_rptList_hlLink_0"]/div/span
 1.4	貼入內容到本文件，應該會類似這樣:
 //*[@id="news_box3"]/div[2]/ul/li[1]
 
 1.5	去掉最後的 [1]，稍後我們會用到這段語法:
 //*[@id="news_box3"]/div[2]/ul/li
-
-
 
 
 2.  利用 cURL 抓回網頁
