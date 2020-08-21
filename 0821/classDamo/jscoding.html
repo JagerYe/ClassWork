@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="echo.php">
+        test:
+        <!-- \w+[.-]?\w?@\w+(.\w)+
+                \d{3}|\d{5}
+                09\d{2}-\d{6} -->
+        <input type="text" name="flightNumber" pattern="\w+[.-]?\w?@\w+(.\w)+" required> <br>
+        <input type="submit" name="btnOK" id="btnOK" value="OK">
+    </form>
+</body>
+
+</html>

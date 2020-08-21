@@ -26,7 +26,7 @@ $xmlString = <<<MultiLines
 MultiLines;
 
 $doc = new DOMDocument();  
-$doc->loadXML($xmlString); 
+$doc->loadXML($xmlString); //載入字串
 header("Content-type: text/xml", true);
 echo $doc->c14n();
 ?>

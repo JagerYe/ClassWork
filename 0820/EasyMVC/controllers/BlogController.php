@@ -10,6 +10,6 @@ class BlogController extends Controller
     {
         $blog = $this->model("Blog");
         $blog->title = $title;
-        $this->view("");
+        $this->view("Blog/title",$blog);
     }
 }

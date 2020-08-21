@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <H1>Hello! <?= $data->name ?></H1>
+    <H1>Hello! <?= $data->title ?></H1>
 </body>
 
 </html>
