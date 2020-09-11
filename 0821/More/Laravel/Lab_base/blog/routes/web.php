@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+date_default_timezone_set('Asia/Taipei');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', 'EmployeesController@index');
+
+Route::resource('employees', 'EmployeesController');
