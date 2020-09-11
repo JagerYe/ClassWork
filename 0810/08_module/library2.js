@@ -13,7 +13,7 @@ export class Animal {
     }
 }
 
-export default class Dog extends Animal {
+export class Dog extends Animal {
     constructor(location = "EN", weightValue) {
         super(weightValue);
         this.location = location;

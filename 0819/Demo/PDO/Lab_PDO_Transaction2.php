@@ -10,13 +10,12 @@
    EmpType varchar(20)
  ) engine = InnoDB;
  */
-try
-{
-	$dbh = new PDO("mysql:host=localhost;dbname=class",
-                    "root", "password");
+$dbh;
+try {
+	$dbh = new PDO("mysql:host=localhost;dbname=class;port=3306", "root", "root");
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$dbh->exec("SET CHARACTER SET utf8");
-	
+
 	$dbh->beginTransaction();
 
 	// 第二個 Insert 無法執行, 欄位名稱錯了
