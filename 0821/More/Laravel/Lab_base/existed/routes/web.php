@@ -13,6 +13,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'EmployeesController@index');
-
-Route::resource('employees', 'EmployeesController');
+Route::get('/', "HomeController@index");

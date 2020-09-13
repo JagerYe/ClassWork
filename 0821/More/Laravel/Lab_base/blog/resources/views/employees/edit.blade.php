@@ -12,8 +12,9 @@
 
 <div class="container">
 
-    <form method="post" action="/employees" class="form-horizontal">
+    <form method="post" action="/employees/{{ $emp->id }}" class="form-horizontal">
         @csrf
+        @method('PUT')
 <fieldset>
 
 <!-- Form Name -->
@@ -23,7 +24,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="firstName">First Name:</label>  
   <div class="col-md-4">
-  <input id="firstName" name="firstName" type="text" placeholder="" class="form-control input-md">
+    <input id="firstName" name="firstName" value="{{ $emp->firstName }}" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
@@ -32,7 +33,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="lastName">Last Name:</label>  
   <div class="col-md-4">
-  <input id="lastName" name="lastName" type="text" placeholder="" class="form-control input-md">
+    <input id="lastName" name="lastName" value="{{ $emp->lastName }}" type="text" placeholder="" class="form-control input-md">
     
   </div>
 </div>
